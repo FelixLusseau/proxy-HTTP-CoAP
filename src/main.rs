@@ -49,7 +49,7 @@ fn handle_connection(mut stream: TcpStream) {
     request.set_method(Method::Get);
     request.set_path(path);
 
-    let socket = UdpSocket::bind("10.42.0.100:0").unwrap();
+    let socket = UdpSocket::bind("10.43.0.1:0").unwrap();
 
     let packet = request.message.to_bytes().unwrap();
     socket
