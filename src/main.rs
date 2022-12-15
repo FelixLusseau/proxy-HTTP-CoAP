@@ -32,6 +32,9 @@ fn handle_connection(mut stream: TcpStream) {
     } else if request_line == "GET /light HTTP/1.1" {
         status_line = "HTTP/1.1 200 OK";
         path = "/light";
+    } else {
+        stream.write_all(status_line.as_bytes()).unwrap();
+        return;
     }
 
     let mut request: CoapRequest<SocketAddr> = CoapRequest::new();
