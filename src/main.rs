@@ -33,7 +33,11 @@ fn handle_connection(mut stream: TcpStream) {
         status_line = "HTTP/1.1 200 OK";
         path = "/light";
     } else {
-        stream.write_all(status_line.as_bytes()).unwrap();
+        let contents = "404 NOT FOUND";
+        let length = contents.len();
+        let response =
+            format!("{status_line}\r\nContent-Length: {length}\r\n\r\n{contents}\r\n\r\n");
+        stream.write_all(response.as_bytes()).unwrap();
         return;
     }
 
