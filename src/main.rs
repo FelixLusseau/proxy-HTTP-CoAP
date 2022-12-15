@@ -33,7 +33,7 @@ fn handle_connection(mut stream: TcpStream) {
         status_line = "HTTP/1.1 200 OK";
         path = "/light";
     } else {
-        stream.write_all(status_line.as_bytes()).unwrap();
+        stream.write_all(&status_line.as_bytes()).unwrap();
         return;
     }
 
