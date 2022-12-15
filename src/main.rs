@@ -8,7 +8,7 @@ use std::{
 };
 
 fn main() {
-    let listener = TcpListener::bind("10.42.0.1:8080").unwrap();
+    let listener = TcpListener::bind("10.42.0.100:8080").unwrap();
 
     for stream in listener.incoming() {
         let stream = stream.unwrap();
@@ -39,11 +39,11 @@ fn handle_connection(mut stream: TcpStream) {
     request.set_method(Method::Get);
     request.set_path(path);
 
-    let socket = UdpSocket::bind("10.42.0.1:0").unwrap();
+    let socket = UdpSocket::bind("10.42.0.100:0").unwrap();
 
     let packet = request.message.to_bytes().unwrap();
     socket
-        .send_to(&packet[..], "10.42.0.217:5683")
+        .send_to(&packet[..], "10.43.0.217:5683")
         .expect("Could not send the data");
 
     let mut buf = [0; 1024];
