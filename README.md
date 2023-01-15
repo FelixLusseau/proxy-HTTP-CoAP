@@ -1,5 +1,8 @@
 # Proxy HTTP-CoAP
 
+[![Rust build](https://github.com/FelixLusseau/proxy-HTTP-CoAP/actions/workflows/build.yml/badge.svg)](https://github.com/FelixLusseau/proxy-HTTP-CoAP/actions/workflows/build.yml)
+[![Author](https://img.shields.io/badge/author-@FelixLusseau-blue)](https://github.com/FelixLusseau)
+
 This is a simple proxy in Rust that forwards HTTP requests from internet on a Raspberry Pi 3 B to a CoAP server on a Arduino MKR 1010 through 2 ethernet subnetworks.
 
 <a href="https://www.rust-lang.org" target="_blank" rel="noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Rust_programming_language_black_logo.svg/480px-Rust_programming_language_black_logo.svg.png" alt="rust" width="40" height="40"/></a>
